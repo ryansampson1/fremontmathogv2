@@ -350,7 +350,7 @@
           </div>
           <div class="field" style="margin-bottom:0;">
             <div class="field-label">Loan Balance</div>
-            <input id="f-loan" type="text" class="ei" value="$3,980,000" />
+            <input id="f-loan" type="text" class="ei" value="$6,800,000" />
           </div>
         </div>
         <div class="wf-row"><span class="wf-lb">Purchase Price</span><span class="wf-v" id="d-price">$10,000,000</span></div>
@@ -602,10 +602,10 @@
 
 <script>
 /* ════ STATE ════ */
-const SK = 'crossBuyout_v3';
+const SK = 'crossBuyout_v4';
 const DEFAULTS = {
   closingDate: '2026-06-15',
-  fPrice: 10000000, fCos: 2, fLoan: 3980000,
+  fPrice: 10000000, fCos: 2, fLoan: 6800000,
   gr1Principal: 500000,  gr1Date: '2024-05-28', gr1Rate: 10,
   gr2Principal: 103768,  gr2Date: '2022-10-14', gr2Rate: 10,
   jbPrincipal:  53000,   jbDate:  '2022-10-14', jbRate:  10,
@@ -740,16 +740,28 @@ function recalc() {
 
 /* ════ SAVE ════ */
 let saveTimer;
+
+function saveNow() {
+  clearTimeout(saveTimer);
+  try { localStorage.setItem(SK, JSON.stringify(S)); } catch(e) {}
+}
+
 function save() {
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
-    localStorage.setItem(SK, JSON.stringify(S));
+    saveNow();
     const b = document.getElementById('saveBadge');
-    b.classList.add('show');
-    clearTimeout(b._t);
-    b._t = setTimeout(() => b.classList.remove('show'), 2200);
-  }, 350);
+    if (b) {
+      b.classList.add('show');
+      clearTimeout(b._t);
+      b._t = setTimeout(() => b.classList.remove('show'), 2200);
+    }
+  }, 300);
 }
+
+// Force-save immediately before tab closes so nothing is lost
+window.addEventListener('beforeunload', saveNow);
+
 function update(key, val) { S[key] = val; save(); recalc(); }
 
 /* ════ WIRE INPUTS ════ */
@@ -759,15 +771,17 @@ document.getElementById('f-closing').addEventListener('change', e => update('clo
 // Money inputs
 [
   ['f-price',        'fPrice',       10000000],
-  ['f-loan',         'fLoan',        3980000 ],
+  ['f-loan',         'fLoan',        6800000 ],
   ['p-gr1-principal','gr1Principal', 500000  ],
   ['p-gr2-principal','gr2Principal', 103768  ],
   ['p-jb-principal', 'jbPrincipal',  53000   ],
 ].forEach(([id, key, def]) => {
   const el = document.getElementById(id);
-  const v  = S[key] != null ? S[key] : def;
+  if (!el) return;
+  const v = S[key] != null ? S[key] : def;
   el.value = v ? '$' + Number(v).toLocaleString('en-US') : '';
   el.addEventListener('input', () => update(key, parseMoney(el.value)));
+  el.addEventListener('blur',  () => update(key, parseMoney(el.value)));
 });
 
 // Pct inputs
@@ -778,9 +792,11 @@ document.getElementById('f-closing').addEventListener('change', e => update('clo
   ['p-jb-rate',  'jbRate',  10],
 ].forEach(([id, key, def]) => {
   const el = document.getElementById(id);
-  const v  = S[key] != null ? S[key] : def;
+  if (!el) return;
+  const v = S[key] != null ? S[key] : def;
   el.value = v + '%';
-  el.addEventListener('input', () => update(key, parsePct(el.value)));
+  el.addEventListener('input',  () => update(key, parsePct(el.value)));
+  el.addEventListener('blur',   () => update(key, parsePct(el.value)));
 });
 
 // Date inputs
@@ -790,6 +806,7 @@ document.getElementById('f-closing').addEventListener('change', e => update('clo
   ['p-jb-date',  'jbDate',  '2022-10-14'],
 ].forEach(([id, key, def]) => {
   const el = document.getElementById(id);
+  if (!el) return;
   el.value = S[key] || def;
   el.addEventListener('change', () => update(key, el.value));
 });
