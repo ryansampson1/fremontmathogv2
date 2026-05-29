@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cross-Deal Buyout Board v2 â Mathog & Fremont</title>
+  <title>Cross-Deal Buyout Board v2 &mdash; Mathog & Fremont</title>
   <style>
     :root {
       --bg:     #0d1117;
@@ -26,7 +26,7 @@
       min-height: 100vh; padding: 28px 32px;
     }
 
-    /* âââ HEADER âââ */
+    /* --- HEADER --- */
     .page-header {
       display: flex; justify-content: space-between; align-items: flex-start;
       margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border);
@@ -51,7 +51,7 @@
     }
     .save-badge.show { opacity: 1; }
 
-    /* âââ SCENARIO NOTE âââ */
+    /* --- SCENARIO NOTE --- */
     .scenario-note {
       background: rgba(56,217,169,0.07); border: 1px solid rgba(56,217,169,0.18);
       border-radius: 10px; padding: 10px 16px; font-size: 0.75rem; color: var(--teal);
@@ -59,7 +59,7 @@
     }
     .scenario-note strong { color: #fff; }
 
-    /* âââ BOARDS âââ */
+    /* --- BOARDS --- */
     .boards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
     .board { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
     .board-header { padding: 14px 20px; border-bottom: 1px solid var(--border); }
@@ -68,7 +68,7 @@
     .board-sub { font-size: 0.73rem; color: var(--muted); margin-top: 3px; }
     .board-body { padding: 16px 20px; }
 
-    /* âââ SEC LABEL âââ */
+    /* --- SEC LABEL --- */
     .sec {
       font-size: 0.63rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
       color: var(--muted); margin-bottom: 9px;
@@ -76,7 +76,7 @@
     }
     .sec::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-    /* âââ PARTY CARDS âââ */
+    /* --- PARTY CARDS --- */
     .party {
       background: var(--card2); border: 1px solid var(--border);
       border-radius: 10px; padding: 12px 14px; margin-bottom: 9px;
@@ -111,14 +111,14 @@
     .tb-label { font-size: 0.73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
     .tb-val { font-size: 1.45rem; font-weight: 900; }
 
-    /* âââ RETAINED âââ */
+    /* --- RETAINED --- */
     .retained {
       background: rgba(79,142,247,0.06); border: 1px solid rgba(79,142,247,0.2);
       border-radius: 9px; padding: 11px 13px; margin-top: 11px;
     }
     .retained-title { font-size: 0.63rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 7px; }
 
-    /* âââ EDITABLE INPUTS âââ */
+    /* --- EDITABLE INPUTS --- */
     .ei {
       background: rgba(255,255,255,0.05); border: 1px solid var(--border);
       border-radius: 6px; color: var(--text); font-size: 0.81rem; font-family: inherit;
@@ -137,7 +137,7 @@
     .frow3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
     .frow4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 7px; }
 
-    /* âââ WATERFALL âââ */
+    /* --- WATERFALL --- */
     .wf {
       background: var(--card2); border: 1px solid var(--border);
       border-radius: 10px; padding: 12px 14px; margin-bottom: 9px;
@@ -167,7 +167,7 @@
     .wf-r-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
     .wf-r-val   { font-size: 1.15rem; font-weight: 900; }
 
-    /* âââ PREF CARD âââ */
+    /* --- PREF CARD --- */
     .pref-card {
       background: var(--card2); border: 1px solid var(--border);
       border-radius: 10px; padding: 11px 13px; margin-bottom: 8px;
@@ -188,7 +188,7 @@
     .pref-total-l { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
     .pref-total-v { font-size: 1.05rem; font-weight: 900; }
 
-    /* âââ SPLIT DIST âââ */
+    /* --- SPLIT DIST --- */
     .split-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 8px; }
     .s3-card { border-radius: 8px; padding: 9px 11px; text-align: center; }
     .s3-name { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 2px; }
@@ -196,7 +196,7 @@
     .s3-val  { font-size: 0.98rem; font-weight: 900; }
     .s3-sub  { font-size: 0.64rem; color: var(--muted); margin-top: 2px; }
 
-    /* âââ CLOSING DATE BAR âââ */
+    /* --- CLOSING DATE BAR --- */
     .date-bar {
       background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.2);
       border-radius: 9px; padding: 10px 14px; margin-bottom: 12px;
@@ -205,7 +205,7 @@
     .date-bar-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); white-space: nowrap; }
     .date-bar .ei { width: auto; flex: 1; min-width: 130px; }
 
-    /* âââ NET SETTLEMENT âââ */
+    /* --- NET SETTLEMENT --- */
     .settlement {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 16px; padding: 18px 22px; margin-bottom: 20px;
@@ -224,7 +224,7 @@
     .pos { color: var(--green); }
     .neg { color: var(--danger); }
 
-    /* âââ ASSUMPTIONS âââ */
+    /* --- ASSUMPTIONS --- */
     .assumptions {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 13px; padding: 14px 18px; margin-bottom: 8px;
@@ -239,49 +239,49 @@
 </head>
 <body>
 
-<!-- ââââââââ HEADER ââââââââ -->
+<!-- ======== HEADER ======== -->
 <div class="page-header">
   <div>
     <div class="page-title">Cross-Deal Buyout Board</div>
     <div class="page-subtitle">
-      Mathog LLC: RG buys out RS &amp; JB Â·
-      Fremont: RS &amp; JB buy out RG, pay off GR's prefs â residual equity splits equally 3 ways Â·
+      Mathog LLC: RG buys out RS &amp; JB &middot;
+      Fremont: RS &amp; JB buy out RG, pay off GR's prefs &mdash; residual equity splits equally 3 ways &middot;
       Mathog figures locked from GL as of May 13, 2026
     </div>
   </div>
   <div class="hdr-meta">
     <div class="hdr-date" id="hdr-closing-display">Closing: June 15, 2026</div>
     <div class="hdr-tag">Cross-Buyout v2</div>
-    <div style="margin-top:8px;"><span class="save-badge" id="saveBadge">â Saved</span></div>
+    <div style="margin-top:8px;"><span class="save-badge" id="saveBadge">&#10003; Saved</span></div>
   </div>
 </div>
 
-<!-- ââââââââ SCENARIO ââââââââ -->
+<!-- ======== SCENARIO ======== -->
 <div class="scenario-note">
   <strong>Scenario:</strong>
   RG acquires 100% of Mathog by buying out RS and JB.
-  RS &amp; JB acquire 100% of Fremont: purchase price less 2% CoS, less loan, less preferred returns (GR T1, GR T2, JB Pref) â distributable residual splits equally 1/3 each to RG, RS, and JB.
+  RS &amp; JB acquire 100% of Fremont: purchase price less 2% CoS, less loan, less preferred returns (GR T1, GR T2, JB Pref) &mdash; distributable residual splits equally 1/3 each to RG, RS, and JB.
   Adjust the closing date to see all pref accruals update live.
 </div>
 
-<!-- ââââââââ DEAL BOARDS ââââââââ -->
+<!-- ======== DEAL BOARDS ======== -->
 <div class="boards">
 
-  <!-- ââââ MATHOG ââââ -->
+  <!-- ---- MATHOG ---- -->
   <div class="board">
     <div class="board-header" style="border-left:3px solid var(--green);">
-      <div class="board-tag" style="color:var(--green);">Mathog LLC Â· 10410 Gibsonton Drive, Riverview FL</div>
+      <div class="board-tag" style="color:var(--green);">Mathog LLC &middot; 10410 Gibsonton Drive, Riverview FL</div>
       <div class="board-title">RG Acquires 100% of Mathog</div>
-      <div class="board-sub">RG buys out RS &amp; JB Â· equity locked from GL Â· note interest accrues through transfer date</div>
+      <div class="board-sub">RG buys out RS &amp; JB &middot; equity locked from GL &middot; note interest accrues through transfer date</div>
     </div>
     <div class="board-body">
 
-      <div class="sec">Exiting parties â what each receives</div>
+      <div class="sec">Exiting parties &mdash; what each receives</div>
 
       <div class="party">
-        <div class="party-name"><span class="badge b-rs">RS</span><span class="party-label">Ryan Sampson â Partner (33.33%)</span></div>
+        <div class="party-name"><span class="badge b-rs">RS</span><span class="party-label">Ryan Sampson &mdash; Partner (33.33%)</span></div>
         <div class="line"><span class="ll">Note principal</span><span class="lv">$275,000</span></div>
-        <div class="line"><span class="ll">Accrued interest @ 10% (7/14/23â<span id="m-rs-int-thru">closing</span>)</span><span class="lv-warn" id="m-rs-int">$77,904</span></div>
+        <div class="line"><span class="ll">Accrued interest @ 10% (7/14/23&ndash;<span id="m-rs-int-thru">closing</span>)</span><span class="lv-warn" id="m-rs-int">$77,904</span></div>
         <div class="line"><span class="ll">Net equity contributions (net of distributions)</span><span class="lv">$445,127</span></div>
         <div class="party-total" style="background:rgba(255,169,77,0.1);border:1px solid rgba(255,169,77,0.3);">
           <span class="pt-label" style="color:var(--warn);">RG Pays RS</span>
@@ -290,7 +290,7 @@
       </div>
 
       <div class="party">
-        <div class="party-name"><span class="badge b-jb">JB</span><span class="party-label">Justin Basil â Partner (33.33%)</span></div>
+        <div class="party-name"><span class="badge b-jb">JB</span><span class="party-label">Justin Basil &mdash; Partner (33.33%)</span></div>
         <div class="line"><span class="ll">Note payable</span><span class="lv-muted">None</span></div>
         <div class="line"><span class="ll">Net equity contributions (net of distributions)</span><span class="lv">$448,127</span></div>
         <div class="party-total" style="background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.3);">
@@ -301,14 +301,14 @@
 
       <div class="total-bar" style="background:rgba(81,207,102,0.08);border:1px solid rgba(81,207,102,0.25);">
         <div>
-          <div class="tb-label" style="color:var(--green);">Total RG Outlay â Mathog</div>
+          <div class="tb-label" style="color:var(--green);">Total RG Outlay &mdash; Mathog</div>
           <div style="font-size:0.7rem;color:var(--muted);margin-top:2px;">RS (note + interest + equity) + JB equity</div>
         </div>
         <div class="tb-val" style="color:var(--green);" id="m-outlay-total">$1,246,158</div>
       </div>
 
       <div class="retained">
-        <div class="retained-title">RG Retains â Mathog (100% owner post-close)</div>
+        <div class="retained-title">RG Retains &mdash; Mathog (100% owner post-close)</div>
         <div class="line"><span class="ll">RG note principal returned to self</span><span class="lv" style="color:var(--accent);">$300,000</span></div>
         <div class="line"><span class="ll">RG accrued note interest returned to self</span><span class="lv" style="color:var(--accent);" id="m-rg-int">$87,370</span></div>
         <div class="line"><span class="ll">RG equity (net contributions)</span><span class="lv" style="color:var(--accent);">$445,127</span></div>
@@ -319,20 +319,20 @@
     </div>
   </div>
 
-  <!-- ââââ FREMONT ââââ -->
+  <!-- ---- FREMONT ---- -->
   <div class="board">
     <div class="board-header" style="border-left:3px solid var(--purple);">
-      <div class="board-tag" style="color:var(--purple);">Fremont â figures editable Â· auto-saved</div>
+      <div class="board-tag" style="color:var(--purple);">Fremont &mdash; figures editable &middot; auto-saved</div>
       <div class="board-title">RS &amp; JB Acquire 100% of Fremont</div>
-      <div class="board-sub">Waterfall: price â CoS â loan â prefs â 1/3 residual each</div>
+      <div class="board-sub">Waterfall: price &rarr; CoS &rarr; loan &rarr; prefs &rarr; 1/3 residual each</div>
     </div>
     <div class="board-body">
 
       <!-- Closing date -->
       <div class="date-bar">
-        <span class="date-bar-label">ð Transfer / Closing Date</span>
+        <span class="date-bar-label">&#128197; Transfer / Closing Date</span>
         <input id="f-closing" type="date" class="ei" value="2026-06-15" />
-        <span style="font-size:0.72rem;color:var(--muted);">â all pref accruals update automatically</span>
+        <span style="font-size:0.72rem;color:var(--muted);">&mdash; all pref accruals update automatically</span>
       </div>
 
       <!-- Deal terms -->
@@ -363,7 +363,7 @@
       </div>
 
       <!-- Preferred Returns -->
-      <div class="sec">Preferred returns â deducted before split</div>
+      <div class="sec">Preferred returns &mdash; deducted before split</div>
 
       <!-- GR Tranche 1 -->
       <div class="pref-card">
@@ -389,9 +389,9 @@
           </div>
         </div>
         <div class="pref-calc">
-          <div class="pref-stat"><div class="pref-stat-l">Days</div><div class="pref-stat-v" id="s-gr1-days">â</div></div>
-          <div class="pref-stat"><div class="pref-stat-l">Accrued Interest</div><div class="pref-stat-v" style="color:var(--warn);" id="s-gr1-int">â</div></div>
-          <div class="pref-stat"><div class="pref-stat-l">Total Payoff</div><div class="pref-stat-v" style="color:var(--accent);" id="s-gr1-total">â</div></div>
+          <div class="pref-stat"><div class="pref-stat-l">Days</div><div class="pref-stat-v" id="s-gr1-days">&mdash;</div></div>
+          <div class="pref-stat"><div class="pref-stat-l">Accrued Interest</div><div class="pref-stat-v" style="color:var(--warn);" id="s-gr1-int">&mdash;</div></div>
+          <div class="pref-stat"><div class="pref-stat-l">Total Payoff</div><div class="pref-stat-v" style="color:var(--accent);" id="s-gr1-total">&mdash;</div></div>
         </div>
       </div>
 
@@ -419,9 +419,9 @@
           </div>
         </div>
         <div class="pref-calc">
-          <div class="pref-stat"><div class="pref-stat-l">Days</div><div class="pref-stat-v" id="s-gr2-days">â</div></div>
-          <div class="pref-stat"><div class="pref-stat-l">Accrued Interest</div><div class="pref-stat-v" style="color:var(--warn);" id="s-gr2-int">â</div></div>
-          <div class="pref-stat"><div class="pref-stat-l">Total Payoff</div><div class="pref-stat-v" style="color:var(--accent);" id="s-gr2-total">â</div></div>
+          <div class="pref-stat"><div class="pref-stat-l">Days</div><div class="pref-stat-v" id="s-gr2-days">&mdash;</div></div>
+          <div class="pref-stat"><div class="pref-stat-l">Accrued Interest</div><div class="pref-stat-v" style="color:var(--warn);" id="s-gr2-int">&mdash;</div></div>
+          <div class="pref-stat"><div class="pref-stat-l">Total Payoff</div><div class="pref-stat-v" style="color:var(--accent);" id="s-gr2-total">&mdash;</div></div>
         </div>
       </div>
 
@@ -449,9 +449,9 @@
           </div>
         </div>
         <div class="pref-calc">
-          <div class="pref-stat"><div class="pref-stat-l">Days</div><div class="pref-stat-v" id="s-jb-days">â</div></div>
-          <div class="pref-stat"><div class="pref-stat-l">Accrued Interest</div><div class="pref-stat-v" style="color:var(--warn);" id="s-jb-int">â</div></div>
-          <div class="pref-stat"><div class="pref-stat-l">Total Payoff</div><div class="pref-stat-v" style="color:var(--danger);" id="s-jb-total">â</div></div>
+          <div class="pref-stat"><div class="pref-stat-l">Days</div><div class="pref-stat-v" id="s-jb-days">&mdash;</div></div>
+          <div class="pref-stat"><div class="pref-stat-l">Accrued Interest</div><div class="pref-stat-v" style="color:var(--warn);" id="s-jb-int">&mdash;</div></div>
+          <div class="pref-stat"><div class="pref-stat-l">Total Payoff</div><div class="pref-stat-v" style="color:var(--danger);" id="s-jb-total">&mdash;</div></div>
         </div>
       </div>
 
@@ -459,12 +459,12 @@
       <div class="sec">Proceeds waterfall</div>
       <div class="wf">
         <div class="wf-row"><span class="wf-l">Equity Pool</span><span class="wf-v" id="d-ep2">$5,820,000</span></div>
-        <div class="wf-row"><span class="wf-l">Less: GR Tranche 1 payoff</span><span class="wf-vn" id="d-gr1-ded">â</span></div>
-        <div class="wf-row"><span class="wf-l">Less: GR Tranche 2 payoff</span><span class="wf-vn" id="d-gr2-ded">â</span></div>
-        <div class="wf-row"><span class="wf-l">Less: JB Preferred Return payoff</span><span class="wf-vn" id="d-jb-ded">â</span></div>
+        <div class="wf-row"><span class="wf-l">Less: GR Tranche 1 payoff</span><span class="wf-vn" id="d-gr1-ded">&mdash;</span></div>
+        <div class="wf-row"><span class="wf-l">Less: GR Tranche 2 payoff</span><span class="wf-vn" id="d-gr2-ded">&mdash;</span></div>
+        <div class="wf-row"><span class="wf-l">Less: JB Preferred Return payoff</span><span class="wf-vn" id="d-jb-ded">&mdash;</span></div>
         <div class="wf-result" style="background:rgba(56,217,169,0.08);border:1px solid rgba(56,217,169,0.25);">
           <span class="wf-r-label" style="color:var(--teal);">Distributable Residual</span>
-          <span class="wf-r-val" style="color:var(--teal);" id="d-residual">â</span>
+          <span class="wf-r-val" style="color:var(--teal);" id="d-residual">&mdash;</span>
         </div>
       </div>
 
@@ -475,19 +475,19 @@
           <div class="s3-card" style="background:rgba(81,207,102,0.07);border:1px solid rgba(81,207,102,0.2);">
             <div class="s3-name" style="color:var(--green);">RG</div>
             <div class="s3-pct">33.33%</div>
-            <div class="s3-val" style="color:var(--green);" id="d-rg-share">â</div>
+            <div class="s3-val" style="color:var(--green);" id="d-rg-share">&mdash;</div>
             <div class="s3-sub">RS &amp; JB buy this</div>
           </div>
           <div class="s3-card" style="background:rgba(255,169,77,0.07);border:1px solid rgba(255,169,77,0.2);">
             <div class="s3-name" style="color:var(--warn);">RS</div>
             <div class="s3-pct">33.33%</div>
-            <div class="s3-val" style="color:var(--warn);" id="d-rs-share">â</div>
+            <div class="s3-val" style="color:var(--warn);" id="d-rs-share">&mdash;</div>
             <div class="s3-sub">RS retained equity</div>
           </div>
           <div class="s3-card" style="background:rgba(255,107,107,0.07);border:1px solid rgba(255,107,107,0.2);">
             <div class="s3-name" style="color:var(--danger);">JB</div>
             <div class="s3-pct">33.33% + pref</div>
-            <div class="s3-val" style="color:var(--danger);" id="d-jb-share">â</div>
+            <div class="s3-val" style="color:var(--danger);" id="d-jb-share">&mdash;</div>
             <div class="s3-sub">Equity + pref returned</div>
           </div>
         </div>
@@ -496,22 +496,22 @@
       <!-- RS & JB Outlay -->
       <div class="sec">RS &amp; JB outlay (split 50 / 50)</div>
       <div class="wf">
-        <div class="wf-row"><span class="wf-l">Pay RG â his 1/3 equity share</span><span class="wf-v" style="color:var(--green);" id="d-pay-rg">â</span></div>
-        <div class="wf-row"><span class="wf-l">Pay GR â Tranche 1 payoff</span><span class="wf-v" style="color:var(--accent);" id="d-pay-gr1">â</span></div>
-        <div class="wf-row"><span class="wf-l">Pay GR â Tranche 2 payoff</span><span class="wf-v" style="color:var(--accent);" id="d-pay-gr2">â</span></div>
+        <div class="wf-row"><span class="wf-l">Pay RG &mdash; his 1/3 equity share</span><span class="wf-v" style="color:var(--green);" id="d-pay-rg">&mdash;</span></div>
+        <div class="wf-row"><span class="wf-l">Pay GR &mdash; Tranche 1 payoff</span><span class="wf-v" style="color:var(--accent);" id="d-pay-gr1">&mdash;</span></div>
+        <div class="wf-row"><span class="wf-l">Pay GR &mdash; Tranche 2 payoff</span><span class="wf-v" style="color:var(--accent);" id="d-pay-gr2">&mdash;</span></div>
         <div class="wf-result" style="background:rgba(204,93,232,0.08);border:1px solid rgba(204,93,232,0.25);margin-bottom:10px;">
           <span class="wf-r-label" style="color:var(--purple);">Total RS &amp; JB Outlay</span>
-          <span class="wf-r-val" style="color:var(--purple);" id="d-total-outlay">â</span>
+          <span class="wf-r-val" style="color:var(--purple);" id="d-total-outlay">&mdash;</span>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
           <div style="background:rgba(255,169,77,0.06);border:1px solid rgba(255,169,77,0.2);border-radius:8px;padding:10px 12px;">
             <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--warn);margin-bottom:3px;">RS Pays</div>
-            <div style="font-size:1.1rem;font-weight:900;color:var(--warn);" id="d-rs-pays">â</div>
+            <div style="font-size:1.1rem;font-weight:900;color:var(--warn);" id="d-rs-pays">&mdash;</div>
             <div style="font-size:0.68rem;color:var(--muted);margin-top:2px;">50% of total outlay</div>
           </div>
           <div style="background:rgba(255,107,107,0.06);border:1px solid rgba(255,107,107,0.2);border-radius:8px;padding:10px 12px;">
             <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--danger);margin-bottom:3px;">JB Pays</div>
-            <div style="font-size:1.1rem;font-weight:900;color:var(--danger);" id="d-jb-pays">â</div>
+            <div style="font-size:1.1rem;font-weight:900;color:var(--danger);" id="d-jb-pays">&mdash;</div>
             <div style="font-size:0.68rem;color:var(--muted);margin-top:2px;">50% of total outlay</div>
           </div>
         </div>
@@ -521,68 +521,68 @@
   </div>
 </div>
 
-<!-- ââââââââ NET SETTLEMENT ââââââââ -->
+<!-- ======== NET SETTLEMENT ======== -->
 <div class="settlement">
-  <div class="sec" style="margin-bottom:0;">Cross-Deal Net Settlement â what each party nets across both transactions</div>
+  <div class="sec" style="margin-bottom:0;">Cross-Deal Net Settlement &mdash; what each party nets across both transactions</div>
   <div class="settle-grid">
 
     <!-- RG -->
     <div class="settle-card">
       <div style="margin-bottom:6px;"><span class="badge b-rg" style="font-size:0.78rem;padding:3px 13px;">RG</span></div>
-      <div class="sc-role">Ryan Gloger<br/>Buys Mathog Â· Sells Fremont equity</div>
-      <div class="sc-flow"><span class="sc-flow-l">Receives from Fremont (1/3)</span><span style="color:var(--green);font-weight:600;" id="n-rg-in">â</span></div>
+      <div class="sc-role">Ryan Gloger<br/>Buys Mathog &middot; Sells Fremont equity</div>
+      <div class="sc-flow"><span class="sc-flow-l">Receives from Fremont (1/3)</span><span style="color:var(--green);font-weight:600;" id="n-rg-in">&mdash;</span></div>
       <div class="sc-flow"><span class="sc-flow-l">Pays for Mathog buyout</span><span style="color:var(--danger);font-weight:600;" id="n-rg-mathog">($1,246,158)</span></div>
       <div class="sc-div"></div>
       <div class="sc-net-l">Net Cash Flow</div>
-      <div class="sc-net-v" id="n-rg-net">â</div>
-      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;" id="n-rg-sub">â</div>
+      <div class="sc-net-v" id="n-rg-net">&mdash;</div>
+      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;" id="n-rg-sub">&mdash;</div>
     </div>
 
     <!-- RS -->
     <div class="settle-card">
       <div style="margin-bottom:6px;"><span class="badge b-rs" style="font-size:0.78rem;padding:3px 13px;">RS</span></div>
-      <div class="sc-role">Ryan Sampson<br/>Sells Mathog Â· Buys Fremont</div>
+      <div class="sc-role">Ryan Sampson<br/>Sells Mathog &middot; Buys Fremont</div>
       <div class="sc-flow"><span class="sc-flow-l">Receives from Mathog</span><span style="color:var(--green);font-weight:600;" id="n-rs-mathog">$798,031</span></div>
-      <div class="sc-flow"><span class="sc-flow-l">Pays for Fremont (50%)</span><span style="color:var(--danger);font-weight:600;" id="n-rs-out">â</span></div>
+      <div class="sc-flow"><span class="sc-flow-l">Pays for Fremont (50%)</span><span style="color:var(--danger);font-weight:600;" id="n-rs-out">&mdash;</span></div>
       <div class="sc-div"></div>
       <div class="sc-net-l">Net Cash Flow</div>
-      <div class="sc-net-v" id="n-rs-net">â</div>
-      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;" id="n-rs-sub">â</div>
+      <div class="sc-net-v" id="n-rs-net">&mdash;</div>
+      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;" id="n-rs-sub">&mdash;</div>
     </div>
 
     <!-- JB -->
     <div class="settle-card">
       <div style="margin-bottom:6px;"><span class="badge b-jb" style="font-size:0.78rem;padding:3px 13px;">JB</span></div>
-      <div class="sc-role">Justin Basil<br/>Sells Mathog Â· Buys Fremont</div>
+      <div class="sc-role">Justin Basil<br/>Sells Mathog &middot; Buys Fremont</div>
       <div class="sc-flow"><span class="sc-flow-l">Receives from Mathog</span><span style="color:var(--green);font-weight:600;">$448,127</span></div>
-      <div class="sc-flow"><span class="sc-flow-l">Pays for Fremont (50%)</span><span style="color:var(--danger);font-weight:600;" id="n-jb-out">â</span></div>
+      <div class="sc-flow"><span class="sc-flow-l">Pays for Fremont (50%)</span><span style="color:var(--danger);font-weight:600;" id="n-jb-out">&mdash;</span></div>
       <div class="sc-div"></div>
       <div class="sc-net-l">Net Cash Flow</div>
-      <div class="sc-net-v" id="n-jb-net">â</div>
-      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;" id="n-jb-sub">â</div>
+      <div class="sc-net-v" id="n-jb-net">&mdash;</div>
+      <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;" id="n-jb-sub">&mdash;</div>
     </div>
 
     <!-- GR -->
     <div class="settle-card">
       <div style="margin-bottom:6px;"><span class="badge b-gr" style="font-size:0.78rem;padding:3px 13px;">GR</span></div>
-      <div class="sc-role">Greg Rowe<br/>Pref payoff â both tranches</div>
-      <div class="sc-flow"><span class="sc-flow-l">Tranche 1 payoff</span><span style="color:var(--green);font-weight:600;" id="n-gr-t1">â</span></div>
-      <div class="sc-flow"><span class="sc-flow-l">Tranche 2 payoff</span><span style="color:var(--green);font-weight:600;" id="n-gr-t2">â</span></div>
+      <div class="sc-role">Greg Rowe<br/>Pref payoff &mdash; both tranches</div>
+      <div class="sc-flow"><span class="sc-flow-l">Tranche 1 payoff</span><span style="color:var(--green);font-weight:600;" id="n-gr-t1">&mdash;</span></div>
+      <div class="sc-flow"><span class="sc-flow-l">Tranche 2 payoff</span><span style="color:var(--green);font-weight:600;" id="n-gr-t2">&mdash;</span></div>
       <div class="sc-div"></div>
       <div class="sc-net-l">Total GR Receives</div>
-      <div class="sc-net-v pos" id="n-gr-total">â</div>
+      <div class="sc-net-v pos" id="n-gr-total">&mdash;</div>
       <div style="font-size:0.65rem;color:var(--muted);margin-top:3px;">Principal + accrued interest</div>
     </div>
 
   </div>
 </div>
 
-<!-- ââââââââ ASSUMPTIONS ââââââââ -->
+<!-- ======== ASSUMPTIONS ======== -->
 <div class="assumptions">
   <div class="sec" style="margin-bottom:0;">Assumptions &amp; sources</div>
   <div class="assum-grid">
     <div class="assum-item"><div class="al">Mathog source</div><div class="av">Rocwell Mathog LLC GL (QuickBooks, All Dates)</div></div>
-    <div class="assum-item"><div class="al">Interest methodology</div><div class="av">10% simple interest â actual days / 365 year</div></div>
+    <div class="assum-item"><div class="al">Interest methodology</div><div class="av">10% simple interest &mdash; actual days / 365 year</div></div>
     <div class="assum-item"><div class="al">RS note (Mathog)</div><div class="av">10% simple interest on $275,000 from 7/14/23 through transfer date</div></div>
     <div class="assum-item"><div class="al">GR Tranche 1</div><div class="av">$500,000 invested 5/28/2024 @ 10% simple, accrues to closing date</div></div>
     <div class="assum-item"><div class="al">GR Tranche 2</div><div class="av">$103,768 invested 10/14/2022 @ 10% simple, accrues to closing date</div></div>
@@ -594,13 +594,13 @@
 </div>
 
 <div class="footnote">
-  Mathog figures locked from Rocwell Mathog LLC General Ledger Â· Fremont figures editable and auto-saved Â·
-  Prepared by Ryan Sampson â ryan@thedirtdog.com Â· May 13, 2026<br/>
+  Mathog figures locked from Rocwell Mathog LLC General Ledger &middot; Fremont figures editable and auto-saved &middot;
+  Prepared by Ryan Sampson &mdash; ryan@thedirtdog.com &middot; May 13, 2026<br/>
   This document is confidential and intended solely for the partners of Rocwell Mathog LLC and Fremont
 </div>
 
 <script>
-/* ââââ STATE ââââ */
+/* ==== STATE ==== */
 const SK = 'crossBuyout_v4';
 const DEFAULTS = {
   closingDate: '2026-06-15',
@@ -614,7 +614,7 @@ let S = (() => {
   return Object.assign({}, DEFAULTS);
 })();
 
-/* ââââ HELPERS ââââ */
+/* ==== HELPERS ==== */
 function parseMoney(v) { return parseFloat(String(v||0).replace(/[$,\s]/g,'')) || 0; }
 function parsePct(v)   { return parseFloat(String(v||0).replace(/[%,\s]/g,'')) || 0; }
 function daysBetween(a, b) {
@@ -627,22 +627,22 @@ function calcPref(principal, startDate, ratePct, closingDate) {
   return { days: d, interest, total: principal + interest };
 }
 function fmt(n) {
-  if (n == null || isNaN(n)) return 'â';
+  if (n == null || isNaN(n)) return '&mdash;';
   const s = Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-  return (n < 0 ? 'â$' : '$') + s;
+  return (n < 0 ? '-$' : '$') + s;
 }
 function fmtNeg(n) {
-  if (!n && n !== 0) return 'â';
+  if (!n && n !== 0) return '&mdash;';
   const s = Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   return n === 0 ? '$0' : '($' + s + ')';
 }
 function set(id, v) { const el = document.getElementById(id); if (el) el.textContent = v; }
 
-/* ââââ RECALC ââââ */
+/* ==== RECALC ==== */
 function recalc() {
   const closing = S.closingDate || '2026-06-15';
 
-  // ââ Mathog dynamic note interest ââ
+  // -- Mathog dynamic note interest --
   const rsNote = calcPref(275000, '2023-07-14', 10, closing);
   const rgNote = calcPref(300000, '2023-06-15', 10, closing);
   const rsTotal    = 275000 + rsNote.interest + 445127;   // note principal + interest + equity
@@ -697,17 +697,17 @@ function recalc() {
   set('d-equity-pool', fmt(ePool));
   set('d-ep2',       fmt(ePool));
 
-  // Pref stats â GR T1
+  // Pref stats &mdash; GR T1
   set('s-gr1-days',  gr1.days.toLocaleString());
   set('s-gr1-int',   fmt(gr1.interest));
   set('s-gr1-total', fmt(gr1.total));
 
-  // Pref stats â GR T2
+  // Pref stats &mdash; GR T2
   set('s-gr2-days',  gr2.days.toLocaleString());
   set('s-gr2-int',   fmt(gr2.interest));
   set('s-gr2-total', fmt(gr2.total));
 
-  // Pref stats â JB
+  // Pref stats &mdash; JB
   set('s-jb-days',   jb.days.toLocaleString());
   set('s-jb-int',    fmt(jb.interest));
   set('s-jb-total',  fmt(jb.total));
@@ -731,7 +731,7 @@ function recalc() {
   set('d-rs-pays',      fmt(rsPays));
   set('d-jb-pays',      fmt(jbPays));
 
-  // Net settlement â mathogRGOut and rsTotal are live from Mathog calc above
+  // Net settlement &mdash; mathogRGOut and rsTotal are live from Mathog calc above
   const mathogJB = 448127;
   const rgNet = oneThird - mathogRGOut;
   const rsNet = rsTotal   - rsPays;
@@ -757,7 +757,7 @@ function recalc() {
   set('n-jb-sub', jbNet >= 0 ? 'JB net receiver' : 'JB net payer');
 }
 
-/* ââââ SAVE ââââ */
+/* ==== SAVE ==== */
 let saveTimer;
 
 function saveNow() {
@@ -783,7 +783,7 @@ window.addEventListener('beforeunload', saveNow);
 
 function update(key, val) { S[key] = val; save(); recalc(); }
 
-/* ââââ WIRE INPUTS ââââ */
+/* ==== WIRE INPUTS ==== */
 // Closing date
 document.getElementById('f-closing').addEventListener('change', e => update('closingDate', e.target.value));
 
